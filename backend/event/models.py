@@ -2,16 +2,6 @@ from django.conf import settings
 from django.db import models
 
 
-class Presenter(models.Model):
-    "Generated Model"
-    name = models.CharField(
-        max_length=256,
-    )
-    title = models.CharField(
-        max_length=256,
-    )
-
-
 class MySchedule(models.Model):
     "Generated Model"
     user = models.ForeignKey(
@@ -102,14 +92,6 @@ class Vendor(models.Model):
         on_delete=models.CASCADE,
         related_name="vendor_category",
     )
-
-
-class Faq(models.Model):
-    "Generated Model"
-    title = models.CharField(
-        max_length=256,
-    )
-    description = models.TextField()
 
 
 class VendorDetail(models.Model):

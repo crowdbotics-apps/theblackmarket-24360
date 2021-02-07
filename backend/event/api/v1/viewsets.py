@@ -1,36 +1,23 @@
 from rest_framework import authentication
 from event.models import (
     Category,
-    Faq,
     Favorites,
     Location,
     MySchedule,
-    Presenter,
     Sponsor,
     Vendor,
     VendorDetail,
 )
 from .serializers import (
     CategorySerializer,
-    FaqSerializer,
     FavoritesSerializer,
     LocationSerializer,
     MyScheduleSerializer,
-    PresenterSerializer,
     SponsorSerializer,
     VendorSerializer,
     VendorDetailSerializer,
 )
 from rest_framework import viewsets
-
-
-class PresenterViewSet(viewsets.ModelViewSet):
-    serializer_class = PresenterSerializer
-    authentication_classes = (
-        authentication.SessionAuthentication,
-        authentication.TokenAuthentication,
-    )
-    queryset = Presenter.objects.all()
 
 
 class MyScheduleViewSet(viewsets.ModelViewSet):
@@ -76,15 +63,6 @@ class VendorViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Vendor.objects.all()
-
-
-class FaqViewSet(viewsets.ModelViewSet):
-    serializer_class = FaqSerializer
-    authentication_classes = (
-        authentication.SessionAuthentication,
-        authentication.TokenAuthentication,
-    )
-    queryset = Faq.objects.all()
 
 
 class VendorDetailViewSet(viewsets.ModelViewSet):
