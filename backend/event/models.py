@@ -10,11 +10,6 @@ class Presenter(models.Model):
     title = models.CharField(
         max_length=256,
     )
-    schedule = models.ForeignKey(
-        "event.Schedule",
-        on_delete=models.CASCADE,
-        related_name="presenter_schedule",
-    )
 
 
 class MySchedule(models.Model):
@@ -25,13 +20,6 @@ class MySchedule(models.Model):
         blank=True,
         on_delete=models.CASCADE,
         related_name="myschedule_user",
-    )
-    schedule = models.ForeignKey(
-        "event.Schedule",
-        null=True,
-        blank=True,
-        on_delete=models.CASCADE,
-        related_name="myschedule_schedule",
     )
 
 
@@ -53,26 +41,6 @@ class Sponsor(models.Model):
         blank=True,
         on_delete=models.CASCADE,
         related_name="sponsor_location",
-    )
-
-
-class Schedule(models.Model):
-    "Generated Model"
-    dateTime = models.DateTimeField()
-    description = models.TextField(
-        null=True,
-        blank=True,
-    )
-    track = models.TextField(
-        null=True,
-        blank=True,
-    )
-    location = models.ForeignKey(
-        "event.Location",
-        null=True,
-        blank=True,
-        on_delete=models.CASCADE,
-        related_name="schedule_location",
     )
 
 
@@ -151,13 +119,6 @@ class VendorDetail(models.Model):
     associated_name = models.TextField(
         null=True,
         blank=True,
-    )
-    vendor_id = models.ForeignKey(
-        "event.Vendor",
-        null=True,
-        blank=True,
-        on_delete=models.CASCADE,
-        related_name="vendordetail_vendor_id",
     )
 
 

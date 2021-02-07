@@ -7,18 +7,37 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Exercises',
+            name="Exercises",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=256)),
-                ('duration', models.CharField(max_length=256)),
-                ('level', models.CharField(blank=True, choices=[('easy', 'Easy'), ('medium', 'Medium'), ('hard', 'Hard')], max_length=24, null=True)),
-                ('energy', models.CharField(max_length=256)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=256)),
+                ("duration", models.CharField(max_length=256)),
+                (
+                    "level",
+                    models.CharField(
+                        blank=True,
+                        choices=[
+                            ("easy", "Easy"),
+                            ("medium", "Medium"),
+                            ("hard", "Hard"),
+                        ],
+                        max_length=24,
+                        null=True,
+                    ),
+                ),
+                ("energy", models.CharField(max_length=256)),
             ],
         ),
     ]

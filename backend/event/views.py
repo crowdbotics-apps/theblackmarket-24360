@@ -1,14 +1,13 @@
 from .models import (
+    Presenter,
+    Sponsor,
+    Favorites,
+    Category,
     Vendor,
     Location,
-    Favorites,
-    VendorDetail,
-    Category,
     Faq,
-    Presenter,
-    Schedule,
+    VendorDetail,
     MySchedule,
-    Sponsor,
 )
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
 from django.shortcuts import render

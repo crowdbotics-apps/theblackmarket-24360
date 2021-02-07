@@ -1,23 +1,21 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .viewsets import (
-    VendorViewSet,
-    LocationViewSet,
-    FavoritesViewSet,
-    VendorDetailViewSet,
     CategoryViewSet,
     FaqViewSet,
-    PresenterViewSet,
-    ScheduleViewSet,
+    FavoritesViewSet,
+    LocationViewSet,
     MyScheduleViewSet,
+    PresenterViewSet,
     SponsorViewSet,
+    VendorViewSet,
+    VendorDetailViewSet,
 )
 
 router = DefaultRouter()
 router.register("presenter", PresenterViewSet)
 router.register("myschedule", MyScheduleViewSet)
 router.register("sponsor", SponsorViewSet)
-router.register("schedule", ScheduleViewSet)
 router.register("favorites", FavoritesViewSet)
 router.register("category", CategoryViewSet)
 router.register("vendor", VendorViewSet)
